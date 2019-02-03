@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-12">
+    <br/>
+    <h2>
+      Fundings with investment required
+    </h2>
+    <table class="table table-bordered table-hover">
+      <thead class="elevator-thead">
+        <td> Id </td>
+        <td> Name </td>
+        <td> Description </td>
+        <td> Is Invested </td>
+        <td> Investment Amount </td>
+        <td> Create Date</td>
+        <td> Create By </td>
+        <td> Invest </td>
+      </thead>
+      <tr *ngFor="let f of fundings">
+        <td>{{ f.id }}</td>
+        <td>{{ f.name }}</td>
+        <td>{{ f.description }}</td>
+        <td>{{ f.isInvested }}</td>
+        <td>{{ f.investmentAmount }}</td>
+        <td>{{ f.createDate | amLocale:'en' | amDateFormat:'MMMM Do YYYY, h:mm:ss A' }}</td>
+        <td>{{ f.createBy }}</td>
+        <td><button class="btn btn-info" (click)= "invest(f.id)">Invest</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
